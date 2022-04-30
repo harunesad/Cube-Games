@@ -804,6 +804,7 @@ MonoBehaviour:
   - {fileID: 5664869333918218025}
   - {fileID: 5637530317960424110}
   - {fileID: 1908086730244533330}
+  spawn: {fileID: 936072531}
 --- !u!4 &731144016
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +869,9 @@ MonoBehaviour:
   count: 0
   powerCount: 0
   powerDownCount: 0
+  diffi: {fileID: 1305343667}
   forwardSpeed: 6
+  spawnPower: {fileID: 1964572226}
   enemySpeed: {fileID: 1002174900}
   Speed: {fileID: 1667570072}
 --- !u!4 &936072532
@@ -1136,7 +1139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1305343668}
   - component: {fileID: 1305343667}
-  - component: {fileID: 1305343669}
   m_Layer: 0
   m_Name: Difficulty
   m_TagString: Untagged
@@ -1156,6 +1158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc9b789381c3e240a3c0dca107544cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnManager: {fileID: 936072531}
+  spawn: {fileID: 936072530}
+  two: {fileID: 731144014}
   title: {fileID: 1073729471}
   easy: {fileID: 1561134308}
   normal: {fileID: 321947368}
@@ -1177,20 +1182,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1305343669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305343666}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f111940434ed1b54bb749990a36073d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tempPosition: {x: 0, y: 0, z: 0}
-  tempPositionTwo: {x: 0, y: 0, z: 0}
 --- !u!1 &1455159343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 288544159}
   highScoreCount: 0
+  spawnManage: {fileID: 936072531}
+  dif: {fileID: 1305343667}
 --- !u!1 &1667570070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +1827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupPrefab: {fileID: 1190387447783116, guid: 1e8a24275f78368469eb95764e51b756, type: 3}
   powerdownPrefab: {fileID: 1823123640252282, guid: 30b32b7e817116548af38dbf12fb57ce, type: 3}
+  spawnManagerPower: {fileID: 936072531}
 --- !u!4 &1964572227
 Transform:
   m_ObjectHideFlags: 0

@@ -9,11 +9,7 @@ public class Two : MonoBehaviour
     private float posZ = -3.5f;
     private float positionZ = -3.0f;
     private float spawnPosZ = -1.5f;
-    private SpawnManager spawn;
-    void Start()
-    {
-        spawn = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-    }
+    public SpawnManager spawn;
     void Update()
     {
         SpawnClone();

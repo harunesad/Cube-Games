@@ -5,14 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Back : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
     public void BackScene()
     {
         SceneManager.LoadScene(0);

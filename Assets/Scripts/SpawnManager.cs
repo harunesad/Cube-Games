@@ -8,7 +8,6 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] prefab;
     private int posOptions;
-    private int posPowerOptions;
     private float posZ = 12.0f;
     public float speed = 5;
     public bool gameOver = false;
@@ -19,9 +18,9 @@ public class SpawnManager : MonoBehaviour
     private float time = 0;
     public float spawnTime = 0;
     public int count, powerCount, powerDownCount;
-    private Difficulty diffi;
+    public Difficulty diffi;
     public float forwardSpeed = 6;
-    private SpawnPower spawnPower;
+    public SpawnPower spawnPower;
     public Text enemySpeed, Speed;
     void Start()
     {
@@ -30,8 +29,6 @@ public class SpawnManager : MonoBehaviour
         gameOver = false;
         skor.text = "Point: " + point;
         InvokeRepeating("SpawnPos", rate, repeat);
-        diffi = GameObject.Find("Difficulty").GetComponent<Difficulty>();
-        spawnPower = GameObject.Find("SpawnPower").GetComponent<SpawnPower>();
     }
     public Vector3 SpawnCoins()
     {
@@ -70,7 +67,6 @@ public class SpawnManager : MonoBehaviour
         if (powerCount == 0)
         {
             Instantiate(spawnPower.powerupPrefab, SpawnPowerup(), spawnPower.powerupPrefab.transform.rotation);
-            //SpawnPowerPos();
         }
         if (gameOver == true)
         {
@@ -81,10 +77,6 @@ public class SpawnManager : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
-    }
-    public void SpawnCube()
-    {
-        //Instantiate(prefab, new Vector3(posOptions), prefab.transform.rotation);
     }
     public void SpawnPos()
     {

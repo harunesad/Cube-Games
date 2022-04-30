@@ -7,12 +7,10 @@ public class ScoreSystem : MonoBehaviour
 {
     public Text  highScoreText;
     public float highScoreCount;
-    private SpawnManager spawnManage;
-    private Difficulty dif;
+    public SpawnManager spawnManage;
+    public Difficulty dif;
     void Start()
     {
-        dif = GameObject.Find("Difficulty").GetComponent<Difficulty>();
-        spawnManage = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         if (PlayerPrefs.GetFloat("CubeHighScore") != null)
         {
             highScoreCount = PlayerPrefs.GetFloat("CubeHighScore");

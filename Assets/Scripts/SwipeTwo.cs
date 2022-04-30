@@ -18,66 +18,39 @@ public class SwipeTwo : MonoBehaviour
         two = GameObject.Find("Two").GetComponent<Two>();
         //dragDistance = Screen.height * 15 / 100;
     }
-    //void Update()
-    //{
-    //    if (Input.touchCount > 0)
-    //    {
-    //        Touch touch = Input.touches[0];
-    //        if (touch.phase == TouchPhase.Began)
-    //        {
-    //            ftp = touch.position;
-    //            ltp = touch.position;
-    //        }                  
-    //        else if (touch.phase == TouchPhase.Moved)
-    //        {
-    //            ltp = touch.position;
-    //        }
-    //        else if (touch.phase == TouchPhase.Ended)
-    //        {
-    //            ltp = touch.position;
-    //            if (Mathf.Abs(ltp.x - ftp.x) > dragDistance || Mathf.Abs(ltp.y - ftp.y) > dragDistance)
-    //            {
-    //                if ((Mathf.Abs(ltp.x - ftp.x) < Mathf.Abs(ltp.y - ftp.y)))
-    //                {
-    //                    if (ltp.y > ftp.y)
-    //                    {
-    //                        RaycastHit raycast;
-    //                        Ray ra = Camera.main.ScreenPointToRay(Input.touches[(int)ltp.y].position);
-    //                        if (Physics.Raycast(ra, out raycast, 100))
-    //                        {
-    //                            if (raycast.transform != null)
-    //                            {
-    //                                if (raycast.transform.tag == "Two")
-    //                                {
-    //                                    text.text = "cgf";
-    //                                }
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-        //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-        //{
-        //    RaycastHit raycast;
-        //    Ray ra = Camera.main.ScreenPointToRay(Input.touches[0].position);
-        //    if (Physics.Raycast(ra, out raycast, 100))
-        //    {
-        //        if (raycast.transform != null)
-        //        {
-        //            if (raycast.transform.tag == "Two")
-        //            {
-        //                text.text = "cgf";
-        //            }
-        //        }
-        //    }
-        //}
-    //}
+    void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+            if (touch.phase == TouchPhase.Began)
+            {
+                ftp = touch.position;
+                ltp = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                ltp = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                ltp = touch.position;
+                if (Mathf.Abs(ltp.x - ftp.x) > dragDistance || Mathf.Abs(ltp.y - ftp.y) > dragDistance)
+                {
+                    if ((Mathf.Abs(ltp.x - ftp.x) < Mathf.Abs(ltp.y - ftp.y)))
+                    {
+                        if (ltp.y > ftp.y)
+                        {
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
     private void OnMouseDown()
     {
         fark = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        //transform.position = Input.mousePosition;
     }
     private void OnMouseUp()
     {

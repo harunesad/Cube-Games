@@ -8,7 +8,7 @@ public class CubeForward : MonoBehaviour
     private SpawnManager spawnMan;
     private Difficulty difficult;
     private SpawnPower spawnPow;
-    void Start()
+    void Awake()
     {
         spawnPow = GameObject.Find("SpawnPower").GetComponent<SpawnPower>();
         spawnMan = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -16,14 +16,8 @@ public class CubeForward : MonoBehaviour
     }
     void Update()
     {
-        if (spawnMan.gameOver == false)
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * spawnMan.forwardSpeed);
-        }
-        if (gameObject.transform.position.z > limitZ)
-        {
-            Destroy(gameObject);
-        }
+        Forward();
+        PosLimit();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -150,5 +144,19 @@ public class CubeForward : MonoBehaviour
     {
         spawnMan.point += 10;
         spawnMan.skor.text = "Point: " + Mathf.Round(spawnMan.point);
+    }
+    void Forward()
+    {
+        if (spawnMan.gameOver == false)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * spawnMan.forwardSpeed);
+        }
+    }
+    void PosLimit()
+    {
+        if (gameObject.transform.position.z > limitZ)
+        {
+            Destroy(gameObject);
+        }
     }
 }

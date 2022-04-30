@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Difficulty : MonoBehaviour
 {
-    private SpawnManager spawnManager;
-    private GameObject spawn;
-    private GameObject two;
+    public SpawnManager spawnManager;
+    public GameObject spawn;
+    public GameObject two;
     public Text title;
     public Button easy, normal, hard;
     public GameObject coinPrefab;
@@ -15,15 +15,8 @@ public class Difficulty : MonoBehaviour
     public float PosZ;
     void Start()
     {
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        spawn = GameObject.Find("SpawnManager");
-        two = GameObject.Find("Two");
         PosX = Random.Range(-3.75f, 3.75f);
         PosZ = Random.Range(0, 10);
-    }
-    void Update()
-    {
-        
     }
     public void Easy()
     {
@@ -67,12 +60,4 @@ public class Difficulty : MonoBehaviour
         spawnManager.speed = 8;
         spawnManager.forwardSpeed = 8.0f;
     }
-    //public void Restart()
-    //{
-    //    title.enabled = true;
-    //    easy.gameObject.SetActive(true);
-    //    normal.gameObject.SetActive(true);
-    //    hard.gameObject.SetActive(true);
-    //    restart.gameObject.SetActive(false);
-    //}
 }

@@ -6,15 +6,7 @@ public class SpawnPower : MonoBehaviour
 {
     public GameObject powerupPrefab;
     public GameObject powerdownPrefab;
-    private SpawnManager spawnManagerPower;
-    void Start()
-    {
-        spawnManagerPower = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-    }
-    void Update()
-    {
-        
-    }
+    public SpawnManager spawnManagerPower;
     public void SpawnPowerup()
     {
         int powerup = Random.Range(1, 3);
